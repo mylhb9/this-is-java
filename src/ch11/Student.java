@@ -10,6 +10,7 @@ public class Student {
     public String getStudentNum() {
         return this.studentNum;
     }
+
     @Override
     public int hashCode() {
         return studentNum.hashCode();
