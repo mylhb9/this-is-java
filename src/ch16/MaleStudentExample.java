@@ -12,7 +12,11 @@ public class MaleStudentExample {
                 new Student3("박수미", 6, Student3.Sex.FEMALE)
         );
 
-        MaleStudent maleStudent = totalList.stream()
+//        MaleStudent maleStudent = totalList.stream()
+//                .filter(s -> s.getSex() == Student3.Sex.MALE)
+//                .collect(MaleStudent::new, MaleStudent::accumulate, MaleStudent::combine);
+
+        MaleStudent maleStudent = totalList.parallelStream()
                 .filter(s -> s.getSex() == Student3.Sex.MALE)
                 .collect(MaleStudent::new, MaleStudent::accumulate, MaleStudent::combine);
 
